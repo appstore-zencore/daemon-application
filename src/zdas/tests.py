@@ -49,7 +49,7 @@ class TestZdas(unittest.TestCase):
         assert p2.pid == p.pid
 
         process_kill(p.pid)
-        time.sleep(1)
+        time.sleep(2)
         assert not p.is_alive()
         assert not is_running(p.pid)
 
