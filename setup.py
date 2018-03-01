@@ -8,7 +8,7 @@ with open(os.path.join(here, 'README.rst'), "r", encoding="utf-8") as fobj:
     long_description = fobj.read()
 
 requires = [
-    "psutils",
+    "psutil",
 ]
 
 setup(
