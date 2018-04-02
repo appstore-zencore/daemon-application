@@ -67,7 +67,7 @@ class TestZdas(unittest.TestCase):
     def test03(self):
         pidfile = "test03.pid"
 
-        p = Process(target=main03, daemon=True)
+        p = Process(target=main03)
         p.start()
 
         time.sleep(1) # child process may not start yet
