@@ -119,7 +119,7 @@ def daemon_start(main, pidfile, daemon=True, workspace=None):
         if old_pid and is_running(old_pid):
             error_message = "Service is running in process: {}.".format(old_pid)
             logger.error(error_message)
-            print(error_message, file=os.sys.stderr)
+            six.print_(error_message, file=os.sys.stderr)
             os.sys.exit(95)
         # clean old pid file.
         clean_pid_file(pidfile)
@@ -144,7 +144,7 @@ def daemon_stop(pidfile, sig=None):
     pid = load_pid(pidfile)
     logger.debug("load pid={}".format(pid))
     if not pid:
-        print("Application is not running or crashed...", file=os.sys.stderr)
+        six.print_("Application is not running or crashed...", file=os.sys.stderr)
         os.sys.exit(195)
     process_kill(pid, sig)
     return pid

@@ -14,7 +14,7 @@ def example_process():
 
     def log(msg):
         with six.open("zdas.log", "a", encoding="utf-8") as fobj:
-            print(msg, file=fobj)
+            six.print_(msg, file=fobj)
 
     def on_exit(sig, frame):
         log(time.time())
@@ -75,13 +75,13 @@ class TestZdas(unittest.TestCase):
         assert is_running(pid)
         assert pid != os.getpid()
 
-        print("killing pid={}".format(pid))
+        six.print_("killing pid={}".format(pid))
         daemon_stop(pidfile)
         time.sleep(2)
         p = get_process(pid)
         if p:
-            print(p)
-            print(p.status())
+            six.print_(p)
+            six.print_(p.status())
         assert not is_running(pid)
 
     def test04(self):
@@ -96,11 +96,11 @@ class TestZdas(unittest.TestCase):
         assert pid != os.getpid()
         assert is_running(pid)
 
-        print("killing pid={}".format(pid))
+        six.print_("killing pid={}".format(pid))
         daemon_stop(pidfile)
         time.sleep(2)
         p = get_process(pid)
         if p:
-            print(p)
-            print(p.status())
+            six.print_(p)
+            six.print_(p.status())
         assert not is_running(pid)
