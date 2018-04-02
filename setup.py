@@ -15,7 +15,7 @@ requires = [
 
 setup(
     name="zdas",
-    version="0.1.0",
+    version="0.1.1",
     description="Zencore daemon application start.",
     long_description=long_description,
     url="https://github.com/appstore-zencore/zdas.git",
