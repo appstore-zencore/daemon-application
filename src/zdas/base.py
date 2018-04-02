@@ -40,7 +40,7 @@ def make_basic_daemon(workspace=None):
     if os.fork():
         os._exit(0)
     # reset stdin/stdout/stderr to /dev/null
-    null = open('/dev/null', os.O_RDWR)
+    null = os.open('/dev/null', os.O_RDWR)
     try:
         for i in range(0, 3):
             try:
