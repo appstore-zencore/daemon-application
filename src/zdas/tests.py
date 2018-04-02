@@ -15,7 +15,7 @@ def example_process():
 
     def log(msg):
         with open("zdas.log", "a", encoding="utf-8") as fobj:
-            six.print_(msg, file=fobj)
+            six.print_(six.u(msg), file=fobj)
 
     def on_exit(sig, frame):
         log(time.time())
