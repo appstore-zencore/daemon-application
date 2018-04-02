@@ -1,4 +1,5 @@
 import os
+from io import open
 from setuptools import setup
 from setuptools import find_packages
 
