@@ -1,6 +1,4 @@
-from __future__ import print_function
-from __future__ import unicode_literals
-from io import open
+import six
 import os
 import time
 import signal
@@ -15,7 +13,7 @@ def example_process():
     stopflag = False
 
     def log(msg):
-        with open("zdas.log", "a", encoding="utf-8") as fobj:
+        with six.open("zdas.log", "a", encoding="utf-8") as fobj:
             print(msg, file=fobj)
 
     def on_exit(sig, frame):
