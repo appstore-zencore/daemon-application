@@ -2,6 +2,7 @@
 Zencore daemon application start(zdas).
 """
 import six
+from io import open
 import os
 import errno
 import atexit
@@ -39,7 +40,7 @@ def make_basic_daemon(workspace=None):
     if os.fork():
         os._exit(0)
     # reset stdin/stdout/stderr to /dev/null
-    null = six.open('/dev/null', os.O_RDWR)
+    null = open('/dev/null', os.O_RDWR)
     try:
         for i in range(0, 3):
             try:
@@ -62,7 +63,7 @@ def load_pid(pidfile):
     """read pid from pidfile.
     """
     if pidfile and os.path.isfile(pidfile):
-        with six.open(pidfile, "r", encoding="utf-8") as fobj:
+        with open(pidfile, "r", encoding="utf-8") as fobj:
             return int(fobj.readline().strip())
     return 0
 
@@ -72,7 +73,7 @@ def write_pidfile(pidfile):
     """
     pid = os.getpid()
     if pidfile:
-        with six.open(pidfile, "w", encoding="utf-8") as fobj:
+        with open(pidfile, "w", encoding="utf-8") as fobj:
             fobj.write(six.u(pid))
     return pid
 
