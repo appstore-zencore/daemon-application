@@ -1,17 +1,17 @@
-zdas
-====
+daemon-application
+==================
 
-.. image:: https://travis-ci.org/appstore-zencore/zdas.svg?branch=master
-    :target: https://travis-ci.org/appstore-zencore/zdas
+.. image:: https://travis-ci.org/appstore-zencore/daemon-application.svg?branch=master
+    :target: https://travis-ci.org/appstore-zencore/daemon-application
 
-Zencore daemon application start.
+Daemon application help functions.
 
 Install
 -------
 
 ::
 
-    pip install zdas
+    pip install daemon-application
 
 
 Usage
@@ -22,7 +22,7 @@ Usage
     import time
     import threading
     import signal
-    import zdas
+    from daemon_application import daemon_start
 
     stopflag = False
 
@@ -42,4 +42,4 @@ Usage
 
     if __name__ == "__main__":
         print("start background application...")
-        zdas.daemon_start(main, "background.pid", True)
+        daemon_start(main, "background.pid", True)

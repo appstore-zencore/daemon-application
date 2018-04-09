@@ -14,11 +14,11 @@ requires = [
 ]
 
 setup(
-    name="zdas",
+    name="daemon-application",
     version="0.1.1",
-    description="Zencore daemon application start.",
+    description="Daemon application help functions.",
     long_description=long_description,
-    url="https://github.com/appstore-zencore/zdas.git",
+    url="https://github.com/appstore-zencore/daemon-application.git",
     author="zencore",
     author_email="dobetter@zencore.cn",
     license="MIT",
@@ -30,7 +30,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3 :: Only',
     ],
-    keywords=['zdas'],
+    keywords=['daemon-application'],
     packages=find_packages("src"),
     package_dir={"": "src"},
     zip_safe=False,

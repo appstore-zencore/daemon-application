@@ -14,7 +14,7 @@ def example_process():
     stopflag = False
 
     def log(msg):
-        with open("zdas.log", "a", encoding="utf-8") as fobj:
+        with open("daemon-application.log", "a", encoding="utf-8") as fobj:
             six.print_(six.u(str(msg)), file=fobj)
 
     def on_exit(sig, frame):
