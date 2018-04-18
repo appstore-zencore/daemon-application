@@ -27,7 +27,7 @@ def example_process():
     signal.signal(signal.SIGTERM, on_exit)
     signal.signal(signal.SIGINT, on_exit)
 
-    log("example_process start pid={}.".format(os.getpid()))
+    log("example_process start pid={pid}.".format(pid=os.getpid()))
     while not stopflag:
         log(time.time())
         time.sleep(1)
@@ -76,7 +76,7 @@ class TestZdas(unittest.TestCase):
         assert is_running(pid)
         assert pid != os.getpid()
 
-        six.print_("killing pid={}".format(pid))
+        six.print_("killing pid={pid}".format(pid=pid))
         daemon_stop(pidfile)
         time.sleep(2)
         p = get_process(pid)
@@ -97,7 +97,7 @@ class TestZdas(unittest.TestCase):
         assert pid != os.getpid()
         assert is_running(pid)
 
-        six.print_("killing pid={}".format(pid))
+        six.print_("killing pid={pid}".format(pid=pid))
         daemon_stop(pidfile)
         time.sleep(2)
         p = get_process(pid)
