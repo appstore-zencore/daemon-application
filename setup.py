@@ -15,7 +15,7 @@ requires = [
 
 setup(
     name="daemon-application",
-    version="0.2.0",
+    version="0.2.1",
     description="Daemon application help functions.",
     long_description=long_description,
     url="https://github.com/appstore-zencore/daemon-application.git",
